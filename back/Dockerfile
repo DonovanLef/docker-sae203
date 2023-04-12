@@ -2,7 +2,7 @@ FROM debian:latest
 
 RUN  apt-get update && \
     apt-get -y install  \
-    default-jdk
+    openjdk-17-jdk openjdk-17-jre
 
 VOLUME ./java
 
