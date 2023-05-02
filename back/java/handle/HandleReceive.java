@@ -2,6 +2,10 @@ package handle;
 
 
 import com.fasterxml.jackson.databind.JsonNode;
+
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+
 import org.eclipse.jetty.websocket.api.Session;
 
 import control.Controleur;
@@ -11,6 +15,7 @@ import pojo.Music;
 import pojo.User;
 
 import util.JsonUtil;
+import util.Mp3Util;
 import util.SocketUtil;
 import util.Util;
 
@@ -30,17 +35,18 @@ public class HandleReceive {
 		this.user = SocketUtil.getUserBySession( session );
 	}
 
-	/* Méthode permettant d'appeler la méthode en fonction du type de la requete */
+	/* Methode permettant d'appeler la methode en fonction du type de la requete */
 	public void run() {
 		switch ( jsonNode.get("type").textValue() ) {
 			case "connection"  -> connection () ;
 			case "newMsg"      -> newMsg     () ;
 			case "newVote"     -> newVote    () ;
+			case "importMusic" -> importMusic() ;
 		}
 	}
 
-	/* Méthode permettant de connecter un utilisateur au serveur, elle vérifie
-	   aussi le pseudo entré par l'utilisateur et créer un objet User pour celui-ci */
+	/* Methode permettant de connecter un utilisateur au serveur, elle verifie
+	   aussi le pseudo entre par l'utilisateur et creer un objet User pour celui-ci */
 	private void connection() {
 		if ( !Util.verifPseudo( this.jsonNode.get("content").textValue() ) ) return;
 		User user = new User( this.jsonNode.get("content").textValue() );
@@ -48,9 +54,9 @@ public class HandleReceive {
 		SocketUtil.addUser( user );
 	};
 
-	/* Méthode permettant d'envoyer le message d'un utilisateur, elle récupère le nom
-	   de l'utilisateur et l'heure à laquelle le message a été envoyé et vérifie le message 
-	   Cette méthode appelle ensuite la méthode sendMsg de HandleSend pour envoyer le message à tous */
+	/* Methode permettant d'envoyer le message d'un utilisateur, elle recupère le nom
+	   de l'utilisateur et l'heure a laquelle le message a ete envoye et verifie le message 
+	   Cette methode appelle ensuite la methode sendMsg de HandleSend pour envoyer le message a tous */
 	private void newMsg() {
 		String name  = this.user.getName();
 		String msg   = this.jsonNode.get("content").textValue();
@@ -60,9 +66,9 @@ public class HandleReceive {
 		HandleSend.sendMsg( message );
 	};
 
-	/* Méthode permettant à un utilisateur de voter pour une musique, elle vérifie que
-	   l'ancien vote de l'utilisateur est pas le même que le nouveau. Cette méthode appelle
-	   ensuite la méthode sendAllMusic de HandleSend pour mettre à jour toutes les musiques pour tous */
+	/* Methode permettant a un utilisateur de voter pour une musique, elle verifie que
+	   l'ancien vote de l'utilisateur n'est pas le même que le nouveau. Cette methode appelle
+	   ensuite la methode sendAllMusic de HandleSend pour mettre a jour toutes les musiques pour tous */
 	private void newVote() {
 
 		Music newMusicVote = Controleur.getMusicById( jsonNode.get("content").intValue() );
@@ -77,4 +83,17 @@ public class HandleReceive {
 
 		HandleSend.sendAllMusic();
 	};
+
+	private void importMusic(){
+		String title = this.jsonNode.get("title").textValue();
+		String author = this.jsonNode.get("author").textValue();
+		String music = this.jsonNode.get("music").textValue();
+
+		byte[] bytes = music.getBytes(StandardCharsets.UTF_8);
+
+
+		Mp3Util.buildMp3Music(bytes, title, author);
+
+		HandleSend.sendAllMusic();
+	}
 }

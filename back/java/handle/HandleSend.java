@@ -18,7 +18,7 @@ import util.SocketUtil;
 
 public class HandleSend {
 
-	/* Méthode permettant d'envoyer un message à tous les utilisateurs actuellement connectés */
+	/* Methode permettant d'envoyer un message a tous les utilisateurs actuellement connectes */
 	public static void sendMsg( Message message ) {
 		Map<String, Object> mapSend = new HashMap<String, Object>();
 		mapSend.put( "type", "nouveauMessage"  );
@@ -27,7 +27,7 @@ public class HandleSend {
 		SocketUtil.sendMessages( json );
 	}
 
-	/* Méthode permettant d'envoyer toutes les musiques aux utilisateurs actuellement connectés */
+	/* Methode permettant d'envoyer toutes les musiques aux utilisateurs actuellement connectes */
 	public static void sendAllMusic() {
 		Collections.sort( Controleur.getListMusic() );
 		Map<String, Object> map = new HashMap<String, Object>();
@@ -37,7 +37,7 @@ public class HandleSend {
 		SocketUtil.sendMessages( json );
 	}
 
-	/* Méthodes permettant de mettre à jour la musique actuellement jouée */
+	/* Methodes permettant de mettre a jour la musique actuellement jouee */
 	public static void sendMajMusic() {
 		majMusic( true, null );
 	}
