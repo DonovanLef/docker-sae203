@@ -11,14 +11,14 @@ import util.SocketUtil;
 
 public class MyWebSocket extends WebSocketAdapter {
 
-	/* Méthode permettant de gérer la connection d'un utilisateur */
+	/* Methode permettant de gerer la connection d'un utilisateur */
 	@Override
 	public void onWebSocketConnect( Session session ) {
 		super.onWebSocketConnect( session );
 		System.out.println( "Socket connected: " );
 	}
 
-	/* Méthode permettant de gérer le message d'un utilisateur */
+	/* Methode permettant de gerer le message d'un utilisateur */
 	@Override
 	public void onWebSocketText( String message ) {
 		super.onWebSocketText( message );
@@ -26,7 +26,7 @@ public class MyWebSocket extends WebSocketAdapter {
 		System.out.println( "Received message: " + message );
 	}
 
-	/* Méthode permettant de gérer la déconnection d'un utilisateur */
+	/* Methode permettant de gerer la deconnection d'un utilisateur */
 	@Override
 	public void onWebSocketClose( int statusCode, String reason ) {
 		SocketUtil.removeUser( getSession() );
@@ -34,7 +34,7 @@ public class MyWebSocket extends WebSocketAdapter {
 		System.out.println( "Socket closed: [" + statusCode + "] " + reason );
 	}
 
-	/* Méthode permettant de gérer les erreurs de connection/deconnection d'un utilisateur */
+	/* Methode permettant de gerer les erreurs de connection/deconnection d'un utilisateur */
 	@Override
 	public void onWebSocketError( Throwable cause ) {
 		SocketUtil.removeUser( getSession() );
