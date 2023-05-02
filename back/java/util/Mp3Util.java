@@ -8,9 +8,13 @@ import pojo.Music;
 import control.Controleur;
 
 import java.io.BufferedInputStream;
+import java.io.ByteArrayInputStream;
+import java.io.FileDescriptor;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Collections;
 
 public class Mp3Util {
@@ -18,7 +22,7 @@ public class Mp3Util {
 	private static Player player;
 	private static Music music;
 
-	/* Méthode play permet de jouer une musique donnée en paramètre */
+	/* Methode play permet de jouer une musique donnee en paramètre */
 	public static void play( Music newMusic ) {
 
 		music = newMusic;
@@ -42,14 +46,65 @@ public class Mp3Util {
 	
 	}
 
-	/* Méthode permettant de récupérer le temps actuel de la musique */
+	/* Methode permettant de recuperer le temps actuel de la musique */
 	public static long currentTime() {
 		return player.getPosition();
 	}
 	
-	/* Méthode permettant de récupérer la musique jouée actuellement */
+	/* Methode permettant de recuperer la musique jouee actuellement */
 	public static Music getMusic() {
 		return music;
+	}
+
+	public static boolean buildMp3Music( byte[] bytes, String title, String author ){
+		boolean isMp3Music = true;
+
+		try
+		{
+
+			//ByteArrayInputStream bis = ;
+			InputStream fis = new ByteArrayInputStream(bytes);
+
+			//int available = bis.available();
+			//byte[] buffer = new byte[available];
+
+			System.out.println("Pass 1");
+			
+			//fis.read(bytes);
+			System.out.println("Pass 2");
+			BufferedInputStream buffered = new BufferedInputStream(fis);
+			System.out.println("Pass 3");
+			Player player = new Player( buffered );
+			Thread myThread = new Thread(() -> {
+
+				try {
+					player.play();
+				} catch (Exception e){
+					e.printStackTrace();
+				}
+				
+			});
+
+			Thread.sleep(1000);
+			System.out.println(player.getPosition());
+			if ( player.getPosition() == 0) return false;
+
+			myThread.interrupt();
+			player.close();
+			System.out.println("Pass 4");
+			System.out.println(player.getPosition());
+			FileOutputStream fos = new FileOutputStream("../../mp3/" + author + " - " + title + ".mp3"); 
+			fos.write(bytes);
+			fos.flush();
+			
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			isMp3Music = false;
+		}
+
+		System.out.println(isMp3Music);
+		return isMp3Music;
 	}
 
 }
