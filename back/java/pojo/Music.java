@@ -22,53 +22,53 @@ public class Music implements Comparable<Music>
 		this.nbVote    = 0;
 	}
 
-	/* Méthode getTitre permettant de récupérer le titre de la musique */
+	/* Methode getTitre permettant de recuperer le titre de la musique */
 	public String getTitre() {
 		return this.titre;
 	}
 
-	/* Méthode getFileName permettant de récuperér le nom du fichier musique */
+	/* Methode getFileName permettant de recuperer le nom du fichier musique */
 	public String getFileName() {
 		return this.fileName;
 	}
 	
-	/* Méthode getArtiste permettant de récupérer l'artiste de la musique */
+	/* Methode getArtiste permettant de recuperer l'artiste de la musique */
 	public String getArtiste() {
 		return this.artiste;
 	}
 
-	/* Méthode getId permettant de récuperér l'ID unique généré de la musique */
+	/* Methode getId permettant de recuperer l'ID unique genere de la musique */
 	public int getId() {
 		return this.id;
 	}
 
-	/* Méthode getNbVote permettant de récuperér le nombre de vote qu'a recu la musique (0 par défaut) */
+	/* Methode getNbVote permettant de recuperer le nombre de vote qu'a recu la musique (0 par defaut) */
 	public int getNbVote() {
 		return this.nbVote;
 	}
 
-	/* Méthode ajouterVote permettant d'ajouter un vote à la musique */
+	/* Methode ajouterVote permettant d'ajouter un vote a la musique */
 	public void ajouterVote() {
 		this.nbVote ++;
 	}
 
-	/* Méthode retirerVote permettant de retirer 1 vote à la musique */
+	/* Methode retirerVote permettant de retirer 1 vote a la musique */
 	public void retirerVote() {
 		this.nbVote --;
 	}
 
-	/* Méthode clearVote permettant de remettre à 0 les votes de la musique */
+	/* Methode clearVote permettant de remettre a 0 les votes de la musique */
 	public void clearVote() {
 		this.nbVote = 0;
 	}
 
-	/* Méthode toString retournant une version textuelle la musique */
+	/* Methode toString retournant une version textuelle la musique */
 	public String toString() {
 		return this.getTitre()
 		       +  "\n\tArtiste(s) : " + this.getArtiste();
 	}
 	
-	/* Méthode compareTo permettant de comparer les votes des musiques pour pouvoir les trier */
+	/* Methode compareTo permettant de comparer les votes des musiques pour pouvoir les trier */
 	public int compareTo( Music music ) {
 		return music.getNbVote() - this.nbVote; 
 	}

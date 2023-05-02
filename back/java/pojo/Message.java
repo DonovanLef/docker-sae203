@@ -16,17 +16,17 @@ public class Message {
 		this.heure   = heure;
 	}
 
-	/* Méthode getMessage permettant de récuperér le contenu du message */
+	/* Methode getMessage permettant de recuperer le contenu du message */
 	public String getMessage() {
 		return message;
 	}
 
-	/* Méthode getUser permettant de récuperér l'utilisateur qui a envoyé le message */
+	/* Methode getUser permettant de recuperer l'utilisateur qui a envoye le message */
 	public String getUser() {
 		return user;
 	}
 	
-	/* Méthode getHeure permettant de récuperér l'heure à laquelle le message a été envoyé */
+	/* Methode getHeure permettant de recuperer l'heure a laquelle le message a ete envoye */
 	public String getHeure() {
 		return heure;
 	}
