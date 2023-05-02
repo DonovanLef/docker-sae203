@@ -62,40 +62,19 @@ public class Mp3Util {
 		try
 		{
 
-			//ByteArrayInputStream bis = ;
 			InputStream fis = new ByteArrayInputStream(bytes);
-
-			//int available = bis.available();
-			//byte[] buffer = new byte[available];
-
-			System.out.println("Pass 1");
-			
-			//fis.read(bytes);
-			System.out.println("Pass 2");
 			BufferedInputStream buffered = new BufferedInputStream(fis);
-			System.out.println("Pass 3");
-			Player player = new Player( buffered );
-			Thread myThread = new Thread(() -> {
+			Player p = new Player( buffered );
+			p.play(20);
 
-				try {
-					player.play();
-				} catch (Exception e){
-					e.printStackTrace();
-				}
-				
-			});
+			if ( p.getPosition() == 0 || author.isEmpty() || title.isEmpty()) return false;
 
-			Thread.sleep(1000);
-			System.out.println(player.getPosition());
-			if ( player.getPosition() == 0) return false;
-
-			myThread.interrupt();
-			player.close();
-			System.out.println("Pass 4");
-			System.out.println(player.getPosition());
+			p.close();
 			FileOutputStream fos = new FileOutputStream("../../mp3/" + author + " - " + title + ".mp3"); 
 			fos.write(bytes);
 			fos.flush();
+
+			Controleur.addMusic(new Music(title, author, "../../mp3/" + author + " - " + title + ".mp3"));
 			
 		}
 		catch (Exception e) {
