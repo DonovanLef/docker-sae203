@@ -1,0 +1,1 @@
+const serverAdress = "localhost:8080";

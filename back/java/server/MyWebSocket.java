@@ -22,8 +22,8 @@ public class MyWebSocket extends WebSocketAdapter {
 	@Override
 	public void onWebSocketText( String message ) {
 		super.onWebSocketText( message );
-		new HandleReceive( message, getSession()).run();
 		System.out.println( "Received message: " + message );
+		new HandleReceive( message, getSession()).run();
 	}
 
 	/* Methode permettant de gerer la deconnection d'un utilisateur */

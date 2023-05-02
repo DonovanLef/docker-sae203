@@ -8,6 +8,14 @@ function envoiVote( idMusique ) {
 }
 
 function importMusic( title, author, file ) {
-	websocket.send( `{"type" : "importMusic", "title": ${title}, "author": ${author}, "music": ${file}}`);	
+
+	//let str = new TextDecoder().decode(file);
+	console.log(file);
+	fetch("http://localhost:8080/importMusic", {
+		method: 'POST',
+		body: JSON.stringify({ title: title, author: author, music: file})
+	})
+		.then(response => response.text())
+		.then(data => console.log(data));
 }
 

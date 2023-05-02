@@ -28,7 +28,7 @@ public class Mp3Util {
 		music = newMusic;
 		System.out.println( newMusic );
 		try {
-			FileInputStream fis = new FileInputStream(Mp3Util.class.getResource("/mp3/").getPath()+music.getFileName());
+			FileInputStream fis = new FileInputStream("../../mp3/" + music.getFileName());
 			BufferedInputStream bis = new BufferedInputStream(fis);
 			player = new Player( bis );
 			HandleSend.sendMajMusic();
@@ -67,6 +67,7 @@ public class Mp3Util {
 			Player p = new Player( buffered );
 			p.play(20);
 
+			System.out.println(p.getPosition());
 			if ( p.getPosition() == 0 || author.isEmpty() || title.isEmpty()) return false;
 
 			p.close();

@@ -1,6 +1,6 @@
 function webSocketCon( a ) {
 
-	websocket = new WebSocket( "ws:localhost:8080/ws" );
+	websocket = new WebSocket( `ws:${serverAdress}/ws` );
 
 	websocket.addEventListener( 'open', () => {
 		websocket.send( `{ "type": "connection", "content": "${a}" }` );

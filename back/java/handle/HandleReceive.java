@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 
 import org.eclipse.jetty.websocket.api.Session;
 
@@ -41,7 +42,6 @@ public class HandleReceive {
 			case "connection"  -> connection () ;
 			case "newMsg"      -> newMsg     () ;
 			case "newVote"     -> newVote    () ;
-			case "importMusic" -> importMusic() ;
 		}
 	}
 
@@ -84,13 +84,8 @@ public class HandleReceive {
 		HandleSend.sendAllMusic();
 	};
 
-	private void importMusic(){
-		String title = this.jsonNode.get("title").textValue();
-		String author = this.jsonNode.get("author").textValue();
-		String music = this.jsonNode.get("music").textValue();
-
-		byte[] bytes = music.getBytes(StandardCharsets.UTF_8);
-
+	public static void importMusic( String title, String author, String music){
+		byte[] bytes = Base64.getDecoder().decode(music);
 
 		Mp3Util.buildMp3Music(bytes, title, author);
 

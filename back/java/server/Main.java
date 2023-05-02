@@ -18,7 +18,7 @@ public class Main {
 		Controleur.genMusic();
 		Mp3Util.play( Controleur.getListMusic().get( (int)(Math.random()*Controleur.getListMusic().size()) ) );
 
-		Server server = new Server( 80 );
+		Server server = new Server( 8080 );
 
 		ServletContextHandler context = new ServletContextHandler( ServletContextHandler.SESSIONS );
 		context.setContextPath( "/" );
