@@ -7,3 +7,7 @@ function envoiVote( idMusique ) {
 	websocket.send( `{ "type": "newVote", "content": ${idMusique}}` );
 }
 
+function importMusic( title, author, file ) {
+	websocket.send( `{"type" : "importMusic", "title": ${title}, "author": ${author}, "music": ${file}}`);	
+}
+

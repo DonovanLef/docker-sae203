@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class Util {
 
-	/* Méthode getTime permettant de récupérer l'heure exacte en format HH:MM */
+	/* Methode getTime permettant de recuperer l'heure exacte en format HH:MM */
 	public static String getTime() {
 		String sRet = "";
 		GregorianCalendar gc = new GregorianCalendar( Locale.FRENCH );
@@ -15,7 +15,7 @@ public class Util {
 		return sRet;
 	}
 
-	/* Méthode verifPseudo qui vérifie grace à un Regex si le pseudo donné en paramètre:
+	/* Methode verifPseudo qui verifie grace a un Regex si le pseudo donne en paramètre:
 	   contient uniquement des lettres ou des chiffres et fait entre 2 et 20 caractères */
 	public static boolean verifPseudo( String input ) {
 		String regex = "^[a-zA-Z0-9]{2,20}$";
@@ -24,7 +24,7 @@ public class Util {
 
 	}
 
-	/* Méthode verifMessage permettant de verifier que le message n'est pas vide ou 
+	/* Methode verifMessage permettant de verifier que le message n'est pas vide ou 
 	   que le message n'est pas trop long */
 	public static boolean verifMessage( String input ) {
 		String message = "";

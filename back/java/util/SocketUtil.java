@@ -11,14 +11,14 @@ public class SocketUtil {
 
 	public static final List<User> listUser = new ArrayList<User>();
 
-	/* Méthode addUser permettant d'ajouter un utilisateur à la liste listUser */
+	/* Methode addUser permettant d'ajouter un utilisateur a la liste listUser */
 	public static void addUser( User user ) {
 		listUser.add(user);
 		HandleSend.sendAllMusic();
 		HandleSend.sendMajMusic( user.getSession() );
 	}
 
-	/* Méthode removeUser permettant de retirer un utilisateur à la liste listUser.
+	/* Methode removeUser permettant de retirer un utilisateur a la liste listUser.
 	   On retire par la même occasion son vote s'il en a un */
 	public static void removeUser ( Session session ) {
 
@@ -28,8 +28,8 @@ public class SocketUtil {
 		HandleSend.sendAllMusic();
 	}
 
-	/* Méthode getUserBySession permettant de retourner le User en fonction de
-	   la session donnée en paramètres */
+	/* Methode getUserBySession permettant de retourner le User en fonction de
+	   la session donnee en paramètres */
 	public static User getUserBySession( Session session ) {
 		for ( User u : listUser )
 			if ( u.getSession() == session )
@@ -37,12 +37,12 @@ public class SocketUtil {
 		return null;
 	}
 
-	/* Méthode sendMessageToOneUser permettant d'envoyer un message à un User spécifique */
+	/* Methode sendMessageToOneUser permettant d'envoyer un message a un User specifique */
 	public static void sendMessageToOneUser( String message, Session session ) {
 		session.getRemote().sendStringByFuture( message );
 	}
 
-	/* Méthode sendMessages permettant d'envoyer un message à tous les utilisateurs */
+	/* Methode sendMessages permettant d'envoyer un message a tous les utilisateurs */
 	public static void sendMessages( String message ){
 		for ( User user : listUser )
 			user.getSession().getRemote().sendStringByFuture( message );
