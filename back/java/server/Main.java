@@ -12,13 +12,13 @@ import util.Mp3Util;
 
 public class Main {
 
-	/* Première méthode à exécuter permettant de lancer le serveur */    
+	/* Première methode a executer permettant de lancer le serveur */    
 	public static void main( String[] args ) throws Exception {
 
 		Controleur.genMusic();
 		Mp3Util.play( Controleur.getListMusic().get( (int)(Math.random()*Controleur.getListMusic().size()) ) );
 
-		Server server = new Server( 8080 );
+		Server server = new Server( 80 );
 
 		ServletContextHandler context = new ServletContextHandler( ServletContextHandler.SESSIONS );
 		context.setContextPath( "/" );
