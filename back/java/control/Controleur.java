@@ -14,7 +14,7 @@ public class Controleur
 {
 	private static ArrayList<Music> tabMusic = new ArrayList<Music>();
 
-	/* Méthode genMusic permettant de récuperer toutes les musiques contenues dans 
+	/* Methode genMusic permettant de recuperer toutes les musiques contenues dans 
 	   le dossier mp3 et de les stocker dans la liste tabMusic d'objets Music*/
 	public static void genMusic() {
 		tabMusic.clear();
@@ -31,7 +31,7 @@ public class Controleur
 
 	}
 
-	/* Méthode clearVote permettant de reinitialiser tous les votes à 0 */
+	/* Methode clearVote permettant de reinitialiser tous les votes a 0 */
 	public static void clearVote() {
 		for ( Music m : tabMusic )
 			m.clearVote();
@@ -39,8 +39,8 @@ public class Controleur
 			u.setVote(null);
 	}
 
-	/* Méthode DecomposeurMusic permet de séparer le titre de la musique de son artiste,
-	   suivant le formatage choisi au départ. On a ici [ ARTISTE - TITRE ] */
+	/* Methode DecomposeurMusic permet de separer le titre de la musique de son artiste,
+	   suivant le formatage choisi au depart. On a ici [ ARTISTE - TITRE ] */
 	
 	public static String[] DecomposeurMusic( String musique ) {
 		String sTemp  = "";
@@ -61,7 +61,7 @@ public class Controleur
 		return sRet;
 	}
 
-	/* Méthode getMusicById permettant de récupérer une musique par son emplacement
+	/* Methode getMusicById permettant de recuperer une musique par son emplacement
 	   dans tabMusic */
 	public static Music getMusicById( int id ) {
 		for ( Music m : tabMusic )
@@ -70,9 +70,13 @@ public class Controleur
 		return null;
 	}
 
-	/* Méthode getListMusic permettant de récupérer tabMusic, la liste de toutes les Musiques */
+	/* Methode getListMusic permettant de recuperer tabMusic, la liste de toutes les Musiques */
 	public static ArrayList<Music> getListMusic() {
 		return tabMusic;
+	}
+
+	public static void addMusic(Music music){
+		tabMusic.add(music);
 	}
 
 }
