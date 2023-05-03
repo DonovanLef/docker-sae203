@@ -4,10 +4,12 @@ import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.regex.Pattern;
 
-public class Util {
+public class Util
+{
 
 	/* Methode getTime permettant de recuperer l'heure exacte en format HH:MM */
-	public static String getTime() {
+	public static String getTime()
+	{
 		String sRet = "";
 		GregorianCalendar gc = new GregorianCalendar( Locale.FRENCH );
 		sRet += String.format( "%02d", gc.get( GregorianCalendar.HOUR_OF_DAY ) ) + ":";
@@ -17,7 +19,8 @@ public class Util {
 
 	/* Methode verifPseudo qui verifie grace a un Regex si le pseudo donne en paramètre:
 	   contient uniquement des lettres ou des chiffres et fait entre 2 et 20 caractères */
-	public static boolean verifPseudo( String input ) {
+	public static boolean verifPseudo( String input )
+	{
 		String regex = "^[a-zA-Z0-9]{2,20}$";
 		Pattern pattern = Pattern.compile( regex );
 		return pattern.matcher(input).matches();
@@ -26,7 +29,8 @@ public class Util {
 
 	/* Methode verifMessage permettant de verifier que le message n'est pas vide ou 
 	   que le message n'est pas trop long */
-	public static boolean verifMessage( String input ) {
+	public static boolean verifMessage( String input )
+	{
 		String message = "";
 		for ( int i=0 ; i<input.length() ; i++ ) { message += " "; }
 		return ( !input.equals( message ) ) && ( input.length() < 240 );

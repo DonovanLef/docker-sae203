@@ -10,10 +10,12 @@ import control.Controleur;
 import util.Mp3Util;
 
 
-public class Main {
+public class Main
+{
 
 	/* Première methode a executer permettant de lancer le serveur */    
-	public static void main( String[] args ) throws Exception {
+	public static void main( String[] args ) throws Exception 
+	{
 
 		Controleur.genMusic();
 		Mp3Util.play( Controleur.getListMusic().get( (int)(Math.random()*Controleur.getListMusic().size()) ) );

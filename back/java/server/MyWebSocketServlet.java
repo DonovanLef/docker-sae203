@@ -20,7 +20,8 @@ import util.JsonUtil;
 import com.fasterxml.jackson.databind.JsonNode;
 
 
-public class MyWebSocketServlet extends WebSocketServlet {
+public class MyWebSocketServlet extends WebSocketServlet 
+{
 
 	private final int NB_MINUTES = 10;
 
@@ -31,17 +32,18 @@ public class MyWebSocketServlet extends WebSocketServlet {
 		factory.register( MyWebSocket.class );
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		//response.setHeader("Access-Control-Allow-Origin", "localhost");
+	protected void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException 
+	{
 		
-		if ( request.getRequestURI().equals("/importMusic")){
+		if ( request.getRequestURI().equals( "/importMusic" ) )
+		{
 
 			StringBuilder requestBody = new StringBuilder();
 			BufferedReader reader = request.getReader();
 			String line = null;
-			while ((line = reader.readLine()) != null) {
-				requestBody.append(line);
+			while ( (line = reader.readLine() ) != null ) 
+			{
+				requestBody.append( line );
 			}
 			String requestBodyString = requestBody.toString();
 			JsonNode jsonNode = JsonUtil.toJsonNode(requestBodyString);

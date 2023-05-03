@@ -1,13 +1,13 @@
 server {
-    listen 80;
+	listen 80;
 
-    location / {
-        root /var/www;
-        index index.html;
-    }
+	location / {
+		root /var/www;
+		index index.html;
+	}
 
-    location /mp3 {
-        alias /var/www/mp3;
-        autoindex on;
-    }
+	location /mp3 {
+		alias /var/www/mp3;
+		autoindex on;
+	}
 }
