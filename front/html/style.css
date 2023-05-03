@@ -154,11 +154,12 @@ main > section {
 }
 
 
-.copyright {
-	margin: auto;
-	padding: 0;
+.center {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	gap: 10rem;
+	justify-content: space-between;
 }
 
-.content_copyright p {
-	text-align: center;
-}
+
