@@ -18,7 +18,7 @@ public class Controleur
 	   le dossier mp3 et de les stocker dans la liste tabMusic d'objets Music*/
 	public static void genMusic() {
 		tabMusic.clear();
-		String path = "../../mp3/"; //Controleur.class.getResource("/mp3/").getPath();
+		String path = Controleur.class.getResource("/mp3/").getPath();
 		File   repertoire = new File( path );
 		File[] decksfiles = repertoire.listFiles();
 
