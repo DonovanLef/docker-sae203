@@ -45,7 +45,6 @@ public class MyWebSocketServlet extends WebSocketServlet {
 			}
 			String requestBodyString = requestBody.toString();
 			JsonNode jsonNode = JsonUtil.toJsonNode(requestBodyString);
-			System.out.println((jsonNode.get("music").textValue()));
 			HandleReceive.importMusic(jsonNode.get("title").textValue(), jsonNode.get("author").textValue(), jsonNode.get("music").textValue());
 
 		}

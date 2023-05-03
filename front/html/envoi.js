@@ -11,7 +11,7 @@ function importMusic( title, author, file ) {
 
 	//let str = new TextDecoder().decode(file);
 	console.log(file);
-	fetch("http://localhost:8080/importMusic", {
+	fetch(`http://${serverAdress}/importMusic`, {
 		method: 'POST',
 		body: JSON.stringify({ title: title, author: author, music: file})
 	})

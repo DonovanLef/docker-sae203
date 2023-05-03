@@ -1,8 +1,12 @@
 FROM nginx:latest
 
+RUN  apt-get update
+
+COPY ./exec.bash /bin/exec.bash
 COPY ./html/ /var/www
 COPY ./nginx_config.txt /etc/nginx/conf.d/default.conf
 
-EXPOSE 80
+WORKDIR /bin
 
-CMD ["./exec.bash"]
+EXPOSE 80
+#CMD ["./exec.bash"]

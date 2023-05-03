@@ -1,1 +1,1 @@
-const serverAdress = "localhost:8080";
+const serverAdress = "172.20.10.2:8090";
