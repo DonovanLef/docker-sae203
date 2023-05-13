@@ -1,16 +1,12 @@
-<div align="center">
-	<h1>
-		Mp3 Application Projet
-	</h1>
-</div>
+# Projet SAE 2.03 Equipe 19
 
-**Nom :** LEFEVRE Donovan, BERNOUY Matthias, JANOT Florian
+## Chat Mp3 
 
-**Groupe :** D
+## Membres de l'équipe 
 
-**Année :** 2023
-
-**IUT Le Havre - Cours GIT**
+* D1 - BERNOUY Matthias
+* D1 - JANOT Florian
+* D1 - LEFEVRE Donovan
 
 ### Compte-rendu SAE 2.03
 
@@ -84,3 +80,7 @@ Ces instructions vous permettront d'utiliser l'application à partir de n'import
 ### Accès à l'application
 * Recupérer l'adresse ip du serveur (nous prendrons 172.0.1.1 pour notre exemple)
 * Accéder au dossier `Web` du serveur sur le port choisi ce qui donne pour l'exemple `172.0.1.1:8080/Web`
+
+## Lien vers le dépôt github du projet 
+
+https://github.com/DonovanLef/docker-sae203/
