@@ -72,7 +72,7 @@ Ces instructions vous permettront de lancer le serveur de l'application
 * Modifier le fichier `var.js` avec la commande `nano html/var.js` pour remplacer l'adresse ip par celle de la machine hôte 
 * Construire l'image Docker du Web avec la commande `docker build -t front .`
 * Se placer dans le dossier `mp3` avec la commande `cd ../mp3`
-* Lancer le Web avec la commande : `sudo docker run -it -p 8080:80 -v "$PWD:/var/www/mp3" front`
+* Lancer le Web avec la commande : `sudo docker run --detach -it -p 8080:80 -v "$PWD:/var/www/mp3" front`
 
 
 
