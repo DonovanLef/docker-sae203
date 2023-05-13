@@ -63,14 +63,14 @@ Ces instructions vous permettront de lancer le serveur de l'application
 * Modifier les droits du fichier `exec.bash` avec la commande `chmod 777 exec.bash`
 * Construire l'image Docker du Serveur avec la commande `docker build -t back .`
 * Se placer dans le dossier `mp3` avec la commande `cd ../mp3`
-* Lancer le Serveur avec la commande `sudo docker run -it -p 8090:80 -v "$PWD:/var/java/mp3" back`
+* Lancer le Serveur avec la commande `sudo docker run --detach -it -p 8090:80 -v "$PWD:/var/java/mp3" back`
 
 
 ### Lancement du Web
 * Se placer dans le dossier `front` avec la commande `cd ../front`
 * Modifier les droits du fichier `exec.bash` avec la commande `chmod 777 exec.bash`
-* Construire l'image Docker du Web avec la commande `docker build -t front .`
 * Modifier le fichier `var.js` avec la commande `nano html/var.js` pour remplacer l'adresse ip par celle de la machine hôte 
+* Construire l'image Docker du Web avec la commande `docker build -t front .`
 * Se placer dans le dossier `mp3` avec la commande `cd ../mp3`
 * Lancer le Web avec la commande : `sudo docker run -it -p 8080:80 -v "$PWD:/var/www/mp3" front`
 
