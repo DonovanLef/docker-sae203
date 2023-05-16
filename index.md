@@ -1,6 +1,4 @@
-# Projet SAE 2.03 Equipe 19
-
-## Chat Mp3 
+# Chat Mp3 
 
 # Introduction
 
