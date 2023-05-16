@@ -43,8 +43,8 @@ Ces instructions vous permettront de lancer le serveur de l'application
 1. Installer `Docker` sur votre machine `serveur`
 2. Installer `GIT` sur votre machine `serveur`
 ### Nécessaire au fonctionnement
-1. * Se placer dans le dossier de votre choix et éxecuter la commande `git clone git@github.com:DonovanLef/docker-sae203.git`
-2. * Se placer dans le dossier `docker-sae203` avec la commande `cd docker-sae203`
+  * Se placer dans le dossier de votre choix et éxecuter la commande `git clone git@github.com:DonovanLef/docker-sae203.git`
+  * Se placer dans le dossier `docker-sae203` avec la commande `cd docker-sae203`
 
 ### Lancement du Serveur
 * Se placer dans le dossier `back` avec la commande `cd back`
