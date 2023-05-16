@@ -2,6 +2,8 @@
 
 ## Chat Mp3 
 
+Installation nginx + Java
+
 ## Membres de l'équipe 
 
 * D1 - BERNOUY Matthias
