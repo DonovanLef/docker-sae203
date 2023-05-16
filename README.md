@@ -2,14 +2,6 @@
 
 ## Chat Mp3 
 
-## Membres de l'équipe 
-
-* D1 - BERNOUY Matthias
-* D1 - JANOT Florian
-* D1 - LEFEVRE Donovan
-
-### Compte-rendu SAE 2.03
-
 # Introduction
 
 Le projet consiste à développer une application de chat en réseau utilisant un protocole client-serveur en Java. 
@@ -80,7 +72,3 @@ Ces instructions vous permettront d'utiliser l'application à partir de n'import
 ### Accès à l'application
 * Recupérer l'adresse ip du serveur (nous prendrons 172.0.1.1 pour notre exemple)
 * Accéder au dossier `Web` du serveur sur le port choisi ce qui donne pour l'exemple `172.0.1.1:8080/Web`
-
-## Lien vers le dépôt github du projet 
-
-https://github.com/DonovanLef/docker-sae203/
