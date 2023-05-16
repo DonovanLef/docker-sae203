@@ -37,12 +37,14 @@ Notre système de vérification de fichier a donc été changé lui aussi : il v
 
 ## Implementation serveur
 Ces instructions vous permettront de lancer le serveur de l'application
+
 ### Pré-requis
 1. Installer `Docker` sur votre machine `serveur`
 2. Installer `GIT` sur votre machine `serveur`
+
 ### Nécessaire au fonctionnement
-  * Se placer dans le dossier de votre choix et éxecuter la commande `git clone git@github.com:DonovanLef/docker-sae203.git`
-  * Se placer dans le dossier `docker-sae203` avec la commande `cd docker-sae203`
+* Se placer dans le dossier de votre choix et éxecuter la commande `git clone git@github.com:DonovanLef/docker-sae203.git`
+* Se placer dans le dossier `docker-sae203` avec la commande `cd docker-sae203`
 
 ### Lancement du Serveur
 * Se placer dans le dossier `back` avec la commande `cd back`
@@ -64,9 +66,11 @@ Ces instructions vous permettront de lancer le serveur de l'application
 
 ## Utilisation côté client
 Ces instructions vous permettront d'utiliser l'application à partir de n'importe quel appareil
+
 ### Pré-requis
 1. Etre connecté sur le même réseau local que le serveur
 2. Posseder un navigateur internet
+
 ### Accès à l'application
 * Recupérer l'adresse ip du serveur (nous prendrons 172.0.1.1 pour notre exemple)
 * Accéder au dossier `Web` du serveur sur le port choisi ce qui donne pour l'exemple `172.0.1.1:8080/Web`
