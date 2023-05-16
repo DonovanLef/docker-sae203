@@ -10,12 +10,10 @@
 
 ## Lien vers le site web du projet 
 
-<h3>Lien externe</h3>
-    <a href="https://donovanlef.github.io/docker-sae203/">Lien vers le site web </a>
+<a href="https://donovanlef.github.io/docker-sae203/">Lien vers le site web </a>
 
 
 ## Lien vers le dépôt github du projet 
 
-<h3>Lien externe</h3>
-    <a href="https://github.com/DonovanLef/docker-sae203/">Lien vers le dépôt github </a>
+<a href="https://github.com/DonovanLef/docker-sae203/">Lien vers le dépôt github </a>
 
